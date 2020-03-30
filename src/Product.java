@@ -17,4 +17,8 @@ public class Product {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+    Product(String description, int weight) {
+        this.weight = weight;
+        this.description = description;
+    }
 }
