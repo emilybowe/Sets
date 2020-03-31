@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 class ProductCatalogueTest {
 
@@ -10,11 +10,11 @@ class ProductCatalogueTest {
         ProductCatalogue catalogue = new ProductCatalogue();
 
         //when
-        catalogue.isSuppliedBy(Supplier.tom);
-        catalogue.isSuppliedBy(Supplier.kate);
+        catalogue.isSuppliedBy(ProductFixtures.bobs);
+        catalogue.isSuppliedBy(ProductFixtures.kates);
 
         //then
-        assertThat(catalogue, containsInAnyOrder(door, floorPanel));
+        assertThat(catalogue, contains(ProductFixtures.door, ProductFixtures.floorPanel));
     }
 
 
